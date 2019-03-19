@@ -11,12 +11,6 @@ RUN  printf '"mountcfg"\n{\n"cstrike" "/home/steam/css/cstrike"\n}\n' >> /home/s
 VOLUME /home/steam/gmod/garrysmod/cfg
 VOLUME /home/steam/gmod/garrysmod/addons
 
-# Copy run script from build context
-COPY run.sh /usr/bin/run.sh
-
-# Set run script to executable
-#RUN chmod a+x /usr/bin/run.sh
-
 # Set environment variables so Player count, startup map and steam workshop collection can easily be changed 
 # by the 'docker run' command
 ENV MAX_PLAYERS=16
@@ -27,4 +21,4 @@ ENV STEAM_WS_COLL=xxxx
 EXPOSE 27005 27015
 
 # Entrypoint
-ENTRYPOINT ["/usr/bin/run.sh"]
+ENTRYPOINT ./home/steam/gmod/srcds_run -console -game garrysmod +maxplayers ${MAX_PLAYERS} +map ${START_MAP} +gamemode ${GAME_MODE} +host_workshop_collection ${STEAM_WS_COLL}
