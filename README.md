@@ -16,14 +16,15 @@ Restart the server with:
 
 ## Customize your server by adding the following variables
 
-change max. players (default 16):  
+Change max. players (default 16):  
 `-e MAX_PLAYERS=20`
 
-change the start map (default ttt_bb_teenroom_b2):  
+Change the start map (default ttt_bb_teenroom_b2):  
 `-e START_MAP=ttt_minecraft_b5`
 
-change the Steam Workshop Collection (default [298502203](https://steamcommunity.com/sharedfiles/filedetails/?id=298502203)):  
-`-e STEAM_WS_COLL=298502203`
+Change the Steam Workshop Collection (default [298502203](https://steamcommunity.com/sharedfiles/filedetails/?id=298502203)):  
+`-e STEAM_WS_COLL=YOUR_WORKSHOP_COLLECTION_ID_HERE`  
+You can find your Workshop Collection ID at the end of the URL.
 
 change the gamemode (default terrortown):  
 `-e GAME_MODE=terrortown`
