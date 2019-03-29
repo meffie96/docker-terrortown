@@ -42,7 +42,11 @@ Change the server password (default empty)
 `-e SERVER_PASSWORD=YOUR_PASSWORD_HERE`
 
 Make yourself Admin (default garry):  
-`-e ADMIN_NAME=YOUR_STEAM_NAME_HERE -e ADMIN_ID=YOUR_STEAM_ID_HERE`
+`-e ADMIN_NAME=YOUR_STEAM_NAME_HERE -e ADMIN_ID=YOUR_STEAM_ID_HERE`  
+To get your Steam-ID:
+1. Open `C:\Program Files (x86)\Steam\logs\connection_log.txt`
+2. Go to the bottom of the document and search for `SetSteamID( [U:1:12345678] )`
+3. Replace `U` with `0`. Your Steam ID should look like this: `[0:1:12345678]`
 
 Example:  
 `docker run -ti -d -e START_MAP=ttt_minecraft_b5 -e COLLECTION=298502203 -p 27015:27015/udp -p 27015:27015 -p 27005:27005/udp -p 27005:27005 --name terrortown meffie96/terrortown`
