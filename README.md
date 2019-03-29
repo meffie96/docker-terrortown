@@ -2,33 +2,33 @@
 A Server for Garry's Mod with default gamemode Trouble in Terrorist Town (TTT)
 
 ## Easy setup:
-
+Initial setup:  
 `docker run -ti -d -p 27015:27015/udp -p 27015:27015 -p 27005:27005/udp -p 27005:27005 --name terrortown meffie96/terrortown`
 
-The server runs in the background. If you want to see the latest output, use:
+The server runs in the background. If you want to see the latest output, use:  
 `docker logs terrortown`
 
-Stop the server with:
+Stop the server with:  
 `docker stop terrortown`
 
-Restart the server with:
+Restart the server with:  
 `docker start terrortown`
 
 ## Customize your server by adding the following variables
 
-change max. players (default 16):
+change max. players (default 16):  
 `-e MAX_PLAYERS=20`
 
-change the start map (default ttt_bb_teenroom_b2):
+change the start map (default ttt_bb_teenroom_b2):  
 `-e START_MAP=ttt_minecraft_b5`
 
-change the Steam Workshop Collection (default [298502203](https://steamcommunity.com/sharedfiles/filedetails/?id=298502203)):
+change the Steam Workshop Collection (default [298502203](https://steamcommunity.com/sharedfiles/filedetails/?id=298502203)):  
 `-e STEAM_WS_COLL=298502203`
 
-change the gamemode (default terrortown):
+change the gamemode (default terrortown):  
 `-e GAME_MODE=terrortown`
 
-Example:
+Example:  
 `docker run -ti -d -e START_MAP=ttt_minecraft_b5 -e STEAM_WS_COLL=298502203 -p 27015:27015/udp -p 27015:27015 -p 27005:27005/udp -p 27005:27005 --name terrortown meffie96/terrortown`
 
 ## Build your own image
