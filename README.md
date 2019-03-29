@@ -27,7 +27,7 @@ change the start map (default ttt_bb_teenroom_b2):
 
 `-e START_MAP=ttt_minecraft_b5`
 
-change the Steam Workshop Collection (default [298502203](https://steamcommunity.com/sharedfiles/filedetails/?id=298502203))
+change the Steam Workshop Collection (default [298502203](https://steamcommunity.com/sharedfiles/filedetails/?id=298502203)):
 
 `-e STEAM_WS_COLL=298502203`
 
