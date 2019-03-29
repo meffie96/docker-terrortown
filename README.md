@@ -41,7 +41,7 @@ Change the server hostname (default 'TTT-Server powered by Docker')
 Change the server password (default empty)  
 `-e SERVER_PASSWORD=YOUR_PASSWORD_HERE`
 
-Make yourself Admin (default garry):
+Make yourself Admin (default garry):  
 `-e ADMIN_NAME=YOUR_STEAM_NAME_HERE -e ADMIN_ID=YOUR_STEAM_ID_HERE`
 
 Example:  
