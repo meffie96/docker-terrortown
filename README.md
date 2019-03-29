@@ -38,3 +38,10 @@ change the gamemode (default terrortown):
 Example:
 
 `docker run -ti -d -e START_MAP=ttt_minecraft_b5 -e STEAM_WS_COLL=298502203 -p 27015:27015/udp -p 27015:27015 -p 27005:27005/udp -p 27005:27005 --name terrortown meffie96/terrortown`
+
+## Build your own image
+
+1. Save the Dockerfile to your system.
+2. (Optional) View and edit the Dockerfile.
+3. Build your own image with `docker build -t YOUR_NAME_HERE .` This will take some time.
+4. Run your own image with `docker run -ti -d -p 27015:27015/udp -p 27015:27015 -p 27005:27005/udp -p 27005:27005 --name terrortown YOUR_NAME_HERE`
