@@ -29,4 +29,4 @@ RUN printf "hostname \"${HOSTNAME}\"\nsv_password \"${SERVER_PASSWORD}" > /home/
 RUN printf "\"Users\"\n{\n\"superadmin\"\n{\n\"${ADMIN_NAME}\" \"${ADMIN_ID}\"\n}\n\"admin\"\n{\n\"${ADMIN_NAME}\" \"${ADMIN_ID}\"\n}\n}" > /home/steam/gmod/garrysmod/settings/users.txt
 
 # Entrypoint
-ENTRYPOINT ./home/steam/gmod/srcds_run -console -game garrysmod +maxplayers ${MAX_PLAYERS} +map ${START_MAP} +gamemode ${GAME_MODE} +host_workshop_collection ${STEAM_WS_COLL}
+ENTRYPOINT ./home/steam/gmod/srcds_run -console -game garrysmod +maxplayers ${MAX_PLAYERS} +map ${START_MAP} +gamemode ${GAME_MODE} +host_workshop_collection ${COLLECTION}
