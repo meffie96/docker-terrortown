@@ -38,7 +38,7 @@ Change the gamemode (default terrortown):
 Change the server hostname (default 'TTT-Server powered by Docker')  
 `-e HOSTNAME='Hostname with Spaces'`
 
-Change the server password (default empty)  
+Change the server password (default Docker)  
 `-e SERVER_PASSWORD=YOUR_PASSWORD_HERE`
 
 Make yourself Admin (default garry):  
