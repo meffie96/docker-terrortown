@@ -4,7 +4,7 @@
 FROM cm2network/steamcmd
 
 # Update steam, install Garry's Mod Server and download Counter Strike Source files
-RUN ./home/steam/steamcmd/steamcmd.sh +login anonymous +force_install_dir "/home/steam/gmod" +app_update 4020 validate +force_install_dir "/home/steam/css" +app_update 232330 +quit
+RUN /home/steam/steamcmd/steamcmd.sh +login anonymous +force_install_dir "/home/steam/gmod" +app_update 4020 validate +force_install_dir "/home/steam/css" +app_update 232330 +quit
 
 # Add mount config so GMod can find CSS files
 RUN printf '"mountcfg"\n{\n"cstrike" "/home/steam/css/cstrike"\n}\n' > /home/steam/gmod/garrysmod/cfg/mount.cfg
@@ -29,4 +29,4 @@ RUN printf "hostname \"${HOSTNAME}\"\nsv_password \"${SERVER_PASSWORD}" > /home/
 RUN printf "\"Users\"\n{\n\"superadmin\"\n{\n\"${ADMIN_NAME}\" \"${ADMIN_ID}\"\n}\n\"admin\"\n{\n\"${ADMIN_NAME}\" \"${ADMIN_ID}\"\n}\n}" > /home/steam/gmod/garrysmod/settings/users.txt
 
 # Entrypoint
-ENTRYPOINT ./home/steam/gmod/srcds_run -console -game garrysmod +maxplayers ${MAX_PLAYERS} +map ${START_MAP} +gamemode ${GAME_MODE} +host_workshop_collection ${COLLECTION}
+ENTRYPOINT /home/steam/gmod/srcds_run -console -game garrysmod +maxplayers ${MAX_PLAYERS} +map ${START_MAP} +gamemode ${GAME_MODE} +host_workshop_collection ${COLLECTION}
