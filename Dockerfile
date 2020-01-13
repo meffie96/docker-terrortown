@@ -12,18 +12,18 @@ RUN printf '"mountcfg"\n{\n"cstrike" "/home/steam/css/cstrike"\n}\n' > /home/ste
 # Expose Ports
 EXPOSE 27005 27015
 
-# Set environment variables so player count, startup map and steam workshop collection can easily be changed by the 'docker run' command
+# Set environment variables
 ENV MAX_PLAYERS=16
-ENV START_MAP=ttt_bb_teenroom_b2
+ENV START_MAP=ttt_minecraft_b5
 ENV GAME_MODE=terrortown
-ENV COLLECTION=298502203
+ENV COLLECTION=1697272655
 ENV HOSTNAME='TTT-Server powered by Docker'
 ENV SERVER_PASSWORD=
 ENV ADMIN_NAME=garry
-ENV ADMIN_ID=STEAM_0:1:7099
+ENV ADMIN_ID=garry
 
 # Set Hostname and Serverpassword
-RUN printf "hostname \"${HOSTNAME}\"\nsv_password \"${SERVER_PASSWORD}" > /home/steam/gmod/garrysmod/cfg/server.cfg
+RUN if [ -z ${SERVER_PASSWORD} ]; then printf "hostname \"${HOSTNAME}\"" > /home/steam/gmod/garrysmod/cfg/server.cfg; else printf "hostname \"${HOSTNAME}\"\nsv_password \"${SERVER_PASSWORD}" > /home/steam/gmod/garrysmod/cfg/server.cfg; fi
 
 # Set Server Admin
 RUN printf "\"Users\"\n{\n\"superadmin\"\n{\n\"${ADMIN_NAME}\" \"${ADMIN_ID}\"\n}\n\"admin\"\n{\n\"${ADMIN_NAME}\" \"${ADMIN_ID}\"\n}\n}" > /home/steam/gmod/garrysmod/settings/users.txt
